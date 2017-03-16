@@ -32,7 +32,7 @@ You can use the application to simulate temperature&humidity data and send to yo
 
 ## Running this sample
 ### Install package
-Install all packages by the following command:
+Install all packages by the following command, it may take serval minutes to complete:
 
 ```bash
 npm install
