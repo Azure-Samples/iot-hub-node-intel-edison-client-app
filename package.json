@@ -1,0 +1,19 @@
+{
+  "name": "iot-hub-node-raspberrypi-client-app",
+  "version": "1.0.0",
+  "description": "Client application for Raspberry Pi collect temperature and humidity data from BME280, then interactive with Azure IoT hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/eslint *.js"
+  },
+  "dependencies": {
+    "azure-iot-device": "^1.1.7",
+    "azure-iot-device-mqtt": "^1.1.7",
+    "bme280-sensor": "^0.1.6",
+    "wiring-pi": ">=2.1.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.17.1"
+  }
+}
