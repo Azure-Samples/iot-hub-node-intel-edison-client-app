@@ -7,20 +7,18 @@ const five = require("johnny-five");
 
 const DEFAULT_PIN = "A0";
 function Sensor(pin) {
-    pin = pin || DEFAULT_PIN;
-    this.reader = new five.Temperature({
-        pin: pin,
-        controller: "GROVE"
-    });
+  pin = pin || DEFAULT_PIN;
+  this.reader = new five.Temperature({
+    pin: pin,
+    controller: "GROVE"
+  });
 }
 
 Sensor.prototype.read = function (callback) {
-    var temperature = this.reader.celsius
-    callback(null, {
-        temperature: temperature,
-    });
+  var temperature = this.reader.celsius
+  callback(null, {
+    temperature: temperature,
+  });
 }
 
 module.exports = Sensor;
-
-
