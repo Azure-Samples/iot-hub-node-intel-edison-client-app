@@ -1,4 +1,5 @@
 # IoT Hub Intel Edison Client application
+[![Build Status](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app.svg?token=5ZpmkzKtuWLEXMPjmJ6P&branch=master)](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app)
 
 > This repo contains the source code to help you get familiar with Azure IoT using the Microsoft IoT Pack for Intel Edison Starter Kit. You will find the [lesson-based tutorials on Azure.com](#).
 
