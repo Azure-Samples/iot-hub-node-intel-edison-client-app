@@ -13,6 +13,8 @@ Follow [this page](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gp
 ## Build Azure IoT SDK
 
 ```bash
+sed -i -e 's/\r$//' buildSDK.sh
+chmod 755 buildSDK.sh
 buildSDK.sh
 ```
 
