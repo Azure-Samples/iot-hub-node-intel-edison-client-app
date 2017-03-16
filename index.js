@@ -7,12 +7,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const wpi = require('wiring-pi');
-
 const Client = require('azure-iot-device').Client;
 const ConnectionString = require('azure-iot-device').ConnectionString;
 const Message = require('azure-iot-device').Message;
 const Protocol = require('azure-iot-device-mqtt').Mqtt;
+
+// Edison packages
+const five = require("johnny-five");
+const Edison = require("edison-io");
+const board = new five.Board({
+  io: new Edison()
+});
 
 const MessageProcessor = require('./messageProcessor.js');
 
@@ -68,11 +73,7 @@ function receiveMessageCallback(msg) {
 }
 
 function blinkLED() {
-  // Light up LED for 500 ms
-  wpi.digitalWrite(config.LEDPin, 1);
-  setTimeout(function () {
-    wpi.digitalWrite(config.LEDPin, 0);
-  }, 500);
+  config.led.blink();
 }
 
 function initClient(connectionStringParam, credentialPath) {
@@ -108,10 +109,12 @@ function initClient(connectionStringParam, credentialPath) {
     return;
   }
 
-  // set up wiring
-  wpi.setup('wpi');
-  wpi.pinMode(config.LEDPin, wpi.OUTPUT);
-  messageProcessor = new MessageProcessor(config);
+  // set up led and sensor
+  board.on('ready', ()=>{
+    config.led = new five.led(config.LEDPin);
+    messageProcessor = new MessageProcessor(config);
+  });
+
 
   // create a client
   // read out the connectionString from process environment

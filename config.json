@@ -2,12 +2,8 @@
   "simulatedData": false,
   "interval": 2000,
   "deviceId": "Intel Edison Node",
-  "LEDPin": 7,
+  "LEDPin": 13,
   "messageMax": 256,
   "credentialPath": "~/.iot-hub",
-  "i2cOption": {
-    "pin": 9,
-    "i2cBusNo": 1,
-    "i2cAddress": 119
-  }
+  "sensorPin": "A0"
 }
