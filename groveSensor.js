@@ -3,6 +3,7 @@
 */
 'use strict';
 
+const five = require("johnny-five");
 
 const DEFAULT_PIN = "A0";
 function Sensor(pin) {

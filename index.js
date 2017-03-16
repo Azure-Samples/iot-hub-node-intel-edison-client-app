@@ -111,7 +111,7 @@ function initClient(connectionStringParam, credentialPath) {
 
   // set up led and sensor
   board.on('ready', ()=>{
-    config.led = new five.led(config.LEDPin);
+    config.led = new five.Led(config.LEDPin);
     messageProcessor = new MessageProcessor(config);
   });
 
