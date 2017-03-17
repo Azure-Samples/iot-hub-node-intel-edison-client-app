@@ -6,15 +6,7 @@
 This repo contains an arduino application that runs on Intel Edison with a Grove temperature sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
 
 ## Set up your edison
-Follow [this page](#) to set up your edison and enable SSH.
-
-## Build Azure IoT SDK
-
-```bash
-sed -i -e 's/\r$//' buildSDK.sh
-chmod 755 buildSDK.sh
-buildSDK.sh
-```
+Follow [this page](#) to set up your edison and enable SSH. Then connect the Grove temperature sensor.
 
 ## Connect your sensor with your edison
 ### Connect with a physical Grove temperature sensor and LED
