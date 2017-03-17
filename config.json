@@ -1,0 +1,9 @@
+{
+  "simulatedData": false,
+  "interval": 2000,
+  "deviceId": "Intel Edison Node",
+  "LEDPin": 13,
+  "messageMax": 256,
+  "credentialPath": "~/.iot-hub",
+  "sensorPin": "A0"
+}
