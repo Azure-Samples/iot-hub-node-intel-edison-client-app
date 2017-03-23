@@ -5,5 +5,6 @@
   "LEDPin": 13,
   "messageMax": 256,
   "credentialPath": "~/.iot-hub",
-  "sensorPin": "A0"
+  "sensorPin": "A0",
+  "temperatureAlert": 30
 }
