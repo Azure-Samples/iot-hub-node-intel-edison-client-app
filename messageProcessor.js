@@ -8,10 +8,12 @@ const SimulatedSensor = require('./simulatedSensor.js');
 
 function MessageProcessor(option) {
   option = Object.assign({
-    deviceId: '[Unknown device] node'
+    deviceId: '[Unknown device] node',
+    temperatureAlert: 30
   }, option);
   this.sensor = option.simulatedData ? new SimulatedSensor() : new GroveSensor(option.sensorPin);
   this.deviceId = option.deviceId;
+  this.temperatureAlert = option.temperatureAlert;
 }
 
 MessageProcessor.prototype.getMessage = function (messageId, cb) {
@@ -25,7 +27,7 @@ MessageProcessor.prototype.getMessage = function (messageId, cb) {
       messageId: messageId,
       deviceId: this.deviceId,
       temperature: data.temperature
-    }));
+    }), data.temperature > this.temperatureAlert);
   });
 }
 

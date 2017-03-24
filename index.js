@@ -21,15 +21,16 @@ const board = new five.Board({
 
 const MessageProcessor = require('./messageProcessor.js');
 
-var sendingMessage = true;
+var sendingMessage = false;
 var messageId = 0;
 var client, config, messageProcessor;
 
 function sendMessage() {
   if (!sendingMessage) { return; }
   messageId++;
-  messageProcessor.getMessage(messageId, (content) => {
+  messageProcessor.getMessage(messageId, (content, temperatureAlert) => {
     var message = new Message(content);
+    message.properties.add('temperatureAlert', temperatureAlert ? 'true' : 'false');
     console.log('Sending message: ' + content);
     client.sendEvent(message, (err) => {
       if (err) {
@@ -113,6 +114,7 @@ function initClient(connectionStringParam, credentialPath) {
   board.on('ready', ()=>{
     config.led = new five.Led(config.LEDPin);
     messageProcessor = new MessageProcessor(config);
+    sendingMessage = true;
   });
 
 
