@@ -55,7 +55,7 @@ function onStart(request, response) {
 }
 
 function onStop(request, response) {
-  console.log('Try to invoke method stop(' + (request.payload || '')  + ')')
+  console.log('Try to invoke method stop(' + (request.payload || '') + ')')
   sendingMessage = false;
 
   response.send(200, 'Successully stop sending message to cloud', function (err) {
@@ -111,7 +111,7 @@ function initClient(connectionStringParam, credentialPath) {
   }
 
   // set up led and sensor
-  board.on('ready', ()=>{
+  board.on('ready', () => {
     config.led = new five.Led(config.LEDPin);
     messageProcessor = new MessageProcessor(config);
     sendingMessage = true;
@@ -133,6 +133,18 @@ function initClient(connectionStringParam, credentialPath) {
     client.onDeviceMethod('start', onStart);
     client.onDeviceMethod('stop', onStop);
     client.on('message', receiveMessageCallback);
-    setInterval(sendMessage, config.interval);
+    var interval = config.interval;
+    setInterval(() => {
+      client.getTwin((err, twin) => {
+        if (err) {
+          console.error("get twin message error");
+          return;
+        }
+        interval = twin.properties.desired.interval || interval;
+      });
+    }, config.interval);
+    while (true) {
+      setTimeout(sendMessage, interval);
+    }
   });
 })(process.argv[2]);
