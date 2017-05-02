@@ -1,18 +1,18 @@
 # IoT Hub Intel Edison Client application
 [![Build Status](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app.svg?token=5ZpmkzKtuWLEXMPjmJ6P&branch=master)](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app)
 
-> This repo contains the source code to help you get familiar with Azure IoT using the Microsoft IoT Pack for Intel Edison Starter Kit. You will find the [lesson-based tutorials on Azure.com](#).
+> This repo contains the source code to help you get familiar with Azure IoT using the Microsoft IoT Pack for Intel Edison Starter Kit. You will find the [lesson-based tutorials on Azure.com](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-intel-edison-kit-node-get-started).
 
-This repo contains an arduino application that runs on Intel Edison with a Grove temperature sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
+This repo contains an nodejs application that runs on Intel Edison with a Grove temperature sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
 
 ## Set up your edison
-Follow [this page](#) to set up your edison and enable SSH. Then connect the Grove temperature sensor.
+Follow [this page](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-intel-edison-kit-node-get-started#setup-intel-edison) to set up your edison and enable SSH. Then connect the Grove temperature sensor.
 
 ## Connect your sensor with your edison
 ### Connect with a physical Grove temperature sensor and LED
 You can follow the image to connect your Grove temperature sensor and a LED with your Intel Edison.
 
-![Grove temperature sensor](#)
+![Grove temperature sensor](https://docs.microsoft.com/en-us/azure/iot-hub/media/iot-hub-intel-edison-kit-node-get-started/16_edion_sensor.png)
 
 ### DON'T HAVE A PHYSICAL Grove temperature sensor?
 You can use the application to simulate temperature data and send to your IoT hub.
