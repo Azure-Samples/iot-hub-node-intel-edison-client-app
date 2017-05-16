@@ -7,8 +7,8 @@
     "test": "node_modules/.bin/eslint *.js"
   },
   "dependencies": {
-    "azure-iot-device": "^1.1.7",
-    "azure-iot-device-mqtt": "^1.1.7",
+    "azure-iot-device": "1.1.7",
+    "azure-iot-device-mqtt": "1.1.7",
     "edison-io": "^0.9.4",
     "johnny-five": "^0.9.33"
   },
