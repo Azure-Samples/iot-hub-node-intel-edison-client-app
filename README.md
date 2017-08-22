@@ -1,3 +1,9 @@
+---
+services: iot-hub
+platforms: nodejs
+author: xshi
+---
+
 # IoT Hub Intel Edison Client application
 [![Build Status](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app.svg?token=5ZpmkzKtuWLEXMPjmJ6P&branch=master)](https://travis-ci.com/Azure-Samples/iot-hub-node-intel-edison-client-app)
 
